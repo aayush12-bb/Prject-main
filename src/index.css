@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #ffffff; 
+  --color-accent: #000000; 
+  --color-background: #b9b9b9; 
+  --color-surface: #bdbdbd; 
+  --color-text: #f8f2e8; 
+  --color-muted: #bdb7aa;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Utility helpers for theme-aware Tailwind-like usage */
+.bg-background {
+  background-color: var(--color-background) !important;
+}
+.text-text {
+  color: var(--color-text) !important;
+}
+.bg-primary {
+  background-color: var(--color-primary) !important;
+  color: #000 !important;
+}
+.bg-surface {
+  background-color: var(--color-surface) !important;
+}
+.border-accent {
+  border-color: var(--color-accent) !important;
+}
+.text-primary {
+  color: var(--color-primary) !important;
+}
+.text-muted {
+  color: var(--color-muted) !important;
+}
+.hover-primary:hover {
+  background-color: var(--color-accent) !important;
+  color: #000000 !important;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+@layer Components {
+  .container {
+    @apply container mx-auto max-w-[1920px];
+  }
+
+  .viewdetails-btn {
+    @apply text-[8px] md:text-[15px] py-2 px-3 md:py-3 md:px-6.25 rounded-md transition-all duration-300 ease-in-out cursor-pointer;
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+  }
+  .viewdetails-btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+    background: rgba(212, 175, 55, 0.06);
+    border-color: var(--color-accent);
+  }
+
+  .buynow-btn {
+    @apply text-[8px] md:text-[15px]  py-2 px-3 md:py-3 md:px-6.25 rounded-md transition-all duration-300 ease-in-out cursor-pointer;
+    background: var(--color-primary);
+    color: #000;
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.18);
+  }
+  .buynow-btn:hover {
+    background: var(--color-accent);
+    transform: scale(1.05);
+  }
+}
